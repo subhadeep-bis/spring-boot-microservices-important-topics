@@ -13,6 +13,6 @@
 11. DYNAMIC FILTERING OF RESTFUL SERVICE - Done in SomeBean part
 12. VERSIONING OF RESTFUL WEBSERVICE - Done in Person Part
 13. BASIC AUTHENTICATION WITH SPRNG SECURITY
-14. CONNECTING RESTFUL WEB SERVICE TO JPA
+14. CONNECTING RESTFUL WEB SERVICE TO JPA - Done in Users and Posts part
 
 __NOTE:__ _Go to src/main/java/com/subhadeep/rest/webservices/restfulwebservices/model to start with all the topics. For a model "User" visit UserController, UserService, etc. to understand what's actually happening. Everything is properly commented for your ease._
