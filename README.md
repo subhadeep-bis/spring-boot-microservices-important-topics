@@ -1,5 +1,5 @@
 # spring-boot-microservices-important-topics
-Learning important topics of spring-boot micro-services.
+## Learning important topics of spring-boot micro-services.
 1. WEB SERVICES
 2. SOAP WEB SERVICE
 3. RESTFUL WEB SERVICE
@@ -11,6 +11,8 @@ Learning important topics of spring-boot micro-services.
 9. MONITORING APIs WITH SPRING BOOT ACTUATOR - Done in User Part
 10. STATIC FILTERING OF RESTFUL SERVICE - Done in SomeBean part
 11. DYNAMIC FILTERING OF RESTFUL SERVICE - Done in SomeBean part
-12. VERSIONING OF RESTFUL WEBSERVICE
+12. VERSIONING OF RESTFUL WEBSERVICE - Done in Person Part
 13. BASIC AUTHENTICATION WITH SPRNG SECURITY
 14. CONNECTING RESTFUL WEB SERVICE TO JPA
+
+**NOTE: ** _Go to src/main/java/com/subhadeep/rest/webservices/restfulwebservices/model to start with all the topics. For a model "User" visit UserController, UserService, etc. to understand what's actually happening. Everything is properly commented for your ease._
