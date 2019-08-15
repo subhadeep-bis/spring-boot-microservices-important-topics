@@ -15,4 +15,4 @@
 13. BASIC AUTHENTICATION WITH SPRNG SECURITY
 14. CONNECTING RESTFUL WEB SERVICE TO JPA
 
-__NOTE: __ _Go to src/main/java/com/subhadeep/rest/webservices/restfulwebservices/model to start with all the topics. For a model "User" visit UserController, UserService, etc. to understand what's actually happening. Everything is properly commented for your ease._
+__NOTE:__ _Go to src/main/java/com/subhadeep/rest/webservices/restfulwebservices/model to start with all the topics. For a model "User" visit UserController, UserService, etc. to understand what's actually happening. Everything is properly commented for your ease._
