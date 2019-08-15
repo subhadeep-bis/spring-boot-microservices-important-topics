@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 
 @Repository
-public class UserDaoService {
+public class UserDaoServiceNoDB {
     private static List<User> users = new ArrayList<>();
     private static int usersCount = 3;
     static {

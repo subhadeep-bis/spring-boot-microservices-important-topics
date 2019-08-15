@@ -32,6 +32,12 @@ public class CentralisedExceptionController extends ResponseEntityExceptionHandl
         return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(PostNotFoundException.class)
+    public ResponseEntity<ExceptionResponse> handlePostNotFoundException(PostNotFoundException ex, WebRequest request) {
+        ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getLocalizedMessage(), request.getDescription(false));
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
+    }
+
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
         List<String> details = new ArrayList<>();

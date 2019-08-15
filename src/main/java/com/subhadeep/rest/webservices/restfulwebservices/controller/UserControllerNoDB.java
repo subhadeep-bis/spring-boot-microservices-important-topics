@@ -2,7 +2,7 @@ package com.subhadeep.rest.webservices.restfulwebservices.controller;
 
 import com.subhadeep.rest.webservices.restfulwebservices.exception.UserNotFoundException;
 import com.subhadeep.rest.webservices.restfulwebservices.model.User;
-import com.subhadeep.rest.webservices.restfulwebservices.service.UserDaoService;
+import com.subhadeep.rest.webservices.restfulwebservices.service.UserDaoServiceNoDB;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
@@ -16,18 +16,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class UserController {
+public class UserControllerNoDB {
 
-    private UserDaoService userDaoService;
+    private UserDaoServiceNoDB userDaoServiceNoDB;
 
     @Autowired
-    public UserController(UserDaoService userDaoService) {
-        this.userDaoService = userDaoService;
+    public UserControllerNoDB(UserDaoServiceNoDB userDaoServiceNoDB) {
+        this.userDaoServiceNoDB = userDaoServiceNoDB;
     }
 
     @GetMapping("/users")
     public List<Resource> retrieveAllUsers() {
-        List<User> users = userDaoService.findAll();
+        List<User> users = userDaoServiceNoDB.findAll();
         List<Resource> hateoasUsers = new ArrayList<>();
         // HATEOAS
         for(User user : users) {
@@ -44,7 +44,7 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public Resource<User> retrieveFirstUser(@PathVariable Integer id) {
-        User retrievedUser = userDaoService.findOne(id);
+        User retrievedUser = userDaoServiceNoDB.findOne(id);
         if(retrievedUser == null) {
             // open the UserNotFoundException class to know more. Important, do open
             throw new UserNotFoundException("User not found with id -> " + id);
@@ -64,7 +64,7 @@ public class UserController {
 //    In 28 minutes example and the best practice
     @RequestMapping(path="/users", method= RequestMethod.POST)
     public ResponseEntity<Object> addUser(@Valid @RequestBody User user) {
-        User savedUser = userDaoService.save(user);
+        User savedUser = userDaoServiceNoDB.save(user);
 
         // ** We want two things here
         //      1. Instead of sending the status OK, send CREATED because we are creating a resource
@@ -101,7 +101,7 @@ public class UserController {
 
     @DeleteMapping("/users/{id}")
     public void deleteUser(@PathVariable("id") Integer id) {
-        User user = userDaoService.deleteById(id);
+        User user = userDaoServiceNoDB.deleteById(id);
 
         if(user == null)
             throw new UserNotFoundException("User not found with id -> " + id);
